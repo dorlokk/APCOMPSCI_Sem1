@@ -6,5 +6,10 @@ public class Lab_01
 		System.out.println("    (----)");
 		System.out.println("  ( >__< )");
 		System.out.println("^^ ~~ ^^");
+		
+		System.out.println("  ^...^");
+		System.out.println(" / o,o \\");
+		System.out.println(" |):::(|");
+		System.out.println("===w=w===");
 	}
 }
