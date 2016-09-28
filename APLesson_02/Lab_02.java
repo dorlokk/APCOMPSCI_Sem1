@@ -7,11 +7,11 @@ public class Lab_02
 		int mult = x * y;
 		System.out.println("The product of " + x + " times " + y + " is " + mult);
 		
-		String name = "Addi";
+		String name = "Addi Guru";
 		String address = "Torrey Pines High School";
-		String city = "San Diego";
+		String city = "San Diego, CA";
 		String zip = "10101";
-		System.out.println(name + "," +address+ "," + city + "," + zip);
+		System.out.println(name + "\n" +address+ "\n" + city + " " + zip);
 		
 		int a = 1;
 		int b = 2;
