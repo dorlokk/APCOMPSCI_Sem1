@@ -1,28 +1,26 @@
 import java.util.Scanner;
 public class Ex_04
 {
-	static double r;
-	static double calcAreaa;
 	public static void main(String[]args)
 	{
 		Scanner kb = new Scanner(System.in);
 		System.out.println("what is the radi length?");
-		r = kb.nextDouble();
-		calcArea();
-		print();
+		double r = kb.nextDouble();
+		
+		print(r, calcArea(r));
 		
 	}
 	
-	public static void calcArea()
+	public static double calcArea(double r)
 	{
 
-		calcAreaa =  Math.PI*(r*r);
+		return Math.PI*(r*r);
 		
 	}
 	
-	public static void print()
+	public static void print(double r, double calcArea)
 	{
-		System.out.printf("The  Area of a circle with radius " + r + " is " + calcAreaa); 
+		System.out.printf("The  Area of a circle with radius " + r + " is " + calcArea); 
 	}
 }
 
