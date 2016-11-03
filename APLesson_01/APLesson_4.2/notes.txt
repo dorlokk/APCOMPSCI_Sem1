@@ -1,3 +1,0 @@
--to use a method independently we need to use the static method
--The scope is the area in which the variablwe is usable
--Instance variables are decladed right inside the bracket and van be used in the whole class

@@ -1,7 +1,0 @@
-\’ - single quote
-\” - double quote
-\\ - backslash
-\n - create a newline
-\t - create a tab
-\b -  create a backspace
-\r - return to the start of teh line

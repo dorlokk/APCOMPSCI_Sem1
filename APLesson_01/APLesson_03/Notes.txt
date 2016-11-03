@@ -1,6 +1,0 @@
--Importing packages gives us and easy way to access code
--The dots denote the hierarchy
--The canner calss is in the package util
--A scanner object allows us to input data
--Use "[PROMPT]" for a user prompt
--Methods define the behouviouur of a program

@@ -1,5 +1,0 @@
--classes are defined by public class
-- A class can be make using a blueprint to easislty duplicate it
--most classes are made of smaller mechanisims called methods
--we need to instantiate an object to get it to work
--static methods can work independently of the object
