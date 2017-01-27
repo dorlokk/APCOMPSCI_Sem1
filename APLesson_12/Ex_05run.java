@@ -5,31 +5,26 @@ public class Ex_05run
 	{
 		Scanner kb = new Scanner(System.in);
 		System.out.println("Enter the user properties");
-		String  = kb.next();
-		String eyes = kb.next();
-		String skin = kb.next();
+		String firstName = kb.next();
+		String lastName = kb.next();
 		
 		
-		Ex_04 user1;
+		System.out.println("Would you like to have an avatar");
+		String Avatar = kb.next();
 		
-		System.out.println("Human properties");
+		if(Avatar.equals("n"))
+		{
+			Ex_05 user1 = new Ex_05 (firstName, lastName, "Undefined");
+			System.out.println (user1);
+		}
 		
-		System.out.println("hair: \t" + object.getHair());
-		System.out.println("eyes: \t" + object.getEyes());
-		System.out.println("skin: \t" + object.getSkin());
-		
-		
-		System.out.println("Please enter the friend properties");
-		object.setHair(kb.next());
-		object.setEyes(kb.next());
-		object.setSkin(kb.next());
-		
-		
-		System.out.println("Friend properties");
-		System.out.println("hair: \t" + object.getHair());
-		System.out.println("eyes: \t" + object.getEyes());
-		System.out.println("skin: \t" + object.getSkin());
-
+		if (Avatar.equals("y"))
+		{
+			System.out.println("What is your username");
+			String publicAvatar = kb.next();
+			Ex_05  user2 = new Ex_05 (firstName, lastName, publicAvatar);
+			System.out.println (user2);
+		}
 		
 		
 	}

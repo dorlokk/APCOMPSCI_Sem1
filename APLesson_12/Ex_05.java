@@ -1,7 +1,7 @@
 import java.lang.Math.*;
 public class Ex_05
 {
-	private String firstName, lastName, avatar
+	private String firstName, lastName, avatar;
 	private int userID;
 	public Ex_05()
 	{
@@ -11,7 +11,7 @@ public class Ex_05
 		userID = 0;
 	}
 	
-	public Ex_05(String fN, String lN, )
+	public Ex_05(String fN, String lN)
 	{
 		firstName = fN;
 		lastName = lN;
@@ -44,7 +44,7 @@ public class Ex_05
 		avatar = a;
 	}
 	
-	public void setUserID(String ID)
+	public void setUserID(int ID)
 	{
 		userID = ID;
 	}
@@ -64,9 +64,16 @@ public class Ex_05
 		return avatar;
 	}
 	
-		public String getUserID()
+	public int getUserID()
 	{
 		return userID;
+	}
+	public String toString()
+	{
+	   return "Customer Info...\nFirst Name: " + firstName +
+							   "\nLast Name: " + lastName +
+							   "\nAvatar: " + avatar +
+							   "\nUser ID#: " + userID;
 	}
 	
 	
