@@ -1,4 +1,4 @@
-public class Magpie2
+public class Magpie3
 {
 	/** Get a default greeting @return a greeting*/
 	public String getGreeting()
@@ -72,10 +72,11 @@ public class Magpie2
 		{
 		  response = transformIWantToStatement(statement);
 		}
+		
 
 		
 
-		else
+		else 
 		{
 			// Look for a two word (you <something> me)
 			// pattern
@@ -88,7 +89,15 @@ public class Magpie2
 			}
 			else
 			{
-				response = getRandomResponse();
+				psn = findKeyword(statement, "I", 0);
+				if (psn >= 0 && findKeyword(statement, "you", psn) >= 0)
+				{
+					response = transformIYouStatement(statement);
+				}
+				else
+				{
+					response = getRandomResponse();
+				}
 			}
 		}
 		return response;
@@ -161,6 +170,37 @@ public class Magpie2
 		String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe).trim();
 		return "What makes you think that I " + restOfStatement + " you?";
 	}
+	
+	private String transformIYouStatement(String statement)
+	{
+		/**
+	   * trim the statement
+	   * Set new String lastChar to the last character in statement
+	   * if lastChar is a period...
+	   *        remove the period
+	   *
+	   * Set new int psnOfYou to the result of findKeyword
+	   *        @param statement and "you"
+	   * Set new int psnOfMe to the result of findKeyword
+	   *      @param statement, "me", and psnOfYou + 3
+	   * Set new String restOfStatement to the rest of statement after "You" + 3,
+	   * and before "me".
+	   *
+	   * return "What makes you think that I " + restOfStatement + "you?"
+	   * */
+		statement = statement.trim();
+		String lastChar = statement.substring(statement.length() - 1);
+		if (lastChar.equals(".") || lastChar.equals("?") || lastChar.equals("!"))
+		{
+			statement = statement.substring(0, statement.length() - 1);
+		}
+		int psnOfI = findKeyword (statement, "I", 0);
+		int psnOfYou = findKeyword (statement, "you", psnOfI);
+		String restOfStatement = statement.substring(psnOfI + 1, psnOfYou).trim();
+		return "Why do you " + restOfStatement + " me";
+	}
+	
+	
 
 	/** Ex_02: The findKeyword() Method...
 	 * ========================================================= */
