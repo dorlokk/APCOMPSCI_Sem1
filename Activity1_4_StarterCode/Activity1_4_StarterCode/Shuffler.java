@@ -19,7 +19,7 @@ public class Shuffler
 	{
 		System.out.println("Results of " + SHUFFLE_COUNT +
 								 " consecutive perfect shuffles:");
-		int[] values1 = {0, 1, 2, 3, 4};
+		int[] values1 = {1, 2, 3, 4, 5, 6, 7};
 		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
 			perfectShuffle(values1);
 			System.out.print("  " + j + ":");
@@ -56,19 +56,26 @@ public class Shuffler
 		//System.out.println("length: " + values.length);
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
 		int[] shuffled = new int[cards.length];
+		int mid = (cards.length +1 )/2;
+		int i = 0;
 		int k = 0;
-        for( int i = 0; i < (cards.length +1) /2 ; i++ ) 
+        for(; i < mid ; i++) 
 		{
             shuffled[k] = cards[i];
 			k += 2;
         }
+		
 		k = 1;
-        for( int j = (cards.length + 1) / 2; j <= cards.length; j++ ) 
+        for(; i < cards.length; i++) 
 		{
-            shuffled[k] = cards[j];
+            shuffled[k] = cards[i];
 			k += 2;
         }
-		cards = shuffled;
+		
+		//putting values from shuffled onto cards.
+		for(k = 0; k < cards.length; k++)
+			cards[k] = shuffled[k];
+		
     }
 
 	/**
@@ -91,7 +98,6 @@ public class Shuffler
 		{
 			
 			int pos =(int)(Math.random()*k);
-			System.out.println(pos);
 			
 			int temp = cards[pos];
 			cards[pos] = cards[k];

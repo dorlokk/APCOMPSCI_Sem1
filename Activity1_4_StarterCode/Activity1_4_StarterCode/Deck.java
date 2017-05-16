@@ -35,8 +35,10 @@ public class Deck {
 		cards = new ArrayList<Card>();
 		for(int i = 0; i < ranks.length; i++)
 		{
-			Card card = new Card(ranks[i], suits[i], values[i]);
-			cards.add(card);
+			for(String suit : suits)
+			{
+				cards.add(new Card(ranks[i], suit, values[i]));
+			}
 		}
 		size = cards.size();
 	}
@@ -69,17 +71,16 @@ public class Deck {
 	 * Randomly permute the given collection of cards
 	 * and reset the size to represent the entire deck.
 	 */
-	public void shuffle(String[] ranks, String[] suits, int[] values) {
+	public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
-		Card card = new Card(ranks[k], suits[k], values[k]);
-		for(int k = cards.length -1; k >= 0; k--)
+		for(int k = size -1; k >= 0; k--)
 		{
 			int pos =(int)(Math.random()*k);
-			int temp = cards[pos];
-			cards[pos] = cards[k];
-			cards[k] = temp;
+			Card temp = cards.get(pos);
+			cards.set(pos, cards.get(k));
+			cards.set(k, temp);
 		}
-		size= cards.size;
+		size = cards.size();
 	}
 	
 
